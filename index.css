@@ -1,0 +1,201 @@
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Segoe UI', 'PingFang SC', Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 1200px;
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  text-align: center;
+  color: #4a5568;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#urlInput {
+  width: 40%;
+  height: 600px;
+  border-radius: 16px;
+  border: 2px solid #e2e8f0;
+  padding: 20px;
+  font-size: 16px;
+  resize: vertical;
+  background: #f8fafc;
+  box-sizing: border-box;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  line-height: 1.5;
+}
+
+#urlInput:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  background: #ffffff;
+}
+
+#urlInput::placeholder {
+  color: #a0aec0;
+  font-style: italic;
+}
+
+#parseBtn {
+  align-self: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#parseBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+#parseBtn:active {
+  transform: translateY(0);
+}
+
+.json-panel {
+  width: 45%;
+  height: 600px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 2px solid #e2e8f0;
+  padding: 20px;
+  font-size: 16px;
+  overflow: auto;
+  word-break: break-all;
+  box-sizing: border-box;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  line-height: 1.5;
+  overflow: auto;
+}
+
+/* JSON语法高亮样式 */
+.json-tree {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  line-height: 1.6;
+  color: #2d3748;
+}
+
+.json-key {
+  color: #d53f8c; /* 粉色 - key */
+  font-weight: 600;
+}
+
+.json-string {
+  color: #38a169; /* 绿色 - 字符串值 */
+}
+
+.json-number {
+  color: #3182ce; /* 蓝色 - 数字值 */
+  font-weight: 500;
+}
+
+.json-boolean {
+  color: #d69e2e; /* 黄色 - 布尔值 */
+  font-weight: 600;
+}
+
+.json-null {
+  color: #e53e3e; /* 红色 - null值 */
+  font-weight: 600;
+}
+
+.json-bracket {
+  color: #4a5568; /* 深灰色 - 括号 */
+  font-weight: 500;
+}
+
+/* 折叠/展开样式 */
+.json-collapser {
+  cursor: pointer;
+  user-select: none;
+  margin-right: 8px;
+  color: #667eea;
+  font-weight: bold;
+  font-size: 14px;
+  display: inline-block;
+  width: 16px;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.json-collapser:hover {
+  color: #764ba2;
+}
+
+.json-object,
+.json-array {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.json-children {
+  margin-left: 0;
+  transition: all 0.2s ease;
+}
+
+.json-item {
+  margin: 2px 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .main-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  #urlInput,
+  .json-panel {
+    width: 100%;
+    height: 300px;
+  }
+  
+  #parseBtn {
+    align-self: center;
+    margin: 10px 0;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+} 

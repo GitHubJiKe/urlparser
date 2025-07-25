@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "URLParser",
+  "version": "1.0.0",
+  "description": "URL解析工具，支持query参数decode并以JSON格式展示",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_title": "打开 URLParser",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["tabs"],
+  "host_permissions": ["<all_urls>"]
+}
